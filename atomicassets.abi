@@ -185,6 +185,28 @@
             ]
         },
         {
+            "name": "backasset",
+            "base": "",
+            "fields": [
+                {
+                    "name": "payer",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_owner",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "token_to_back",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
             "name": "balances_s",
             "base": "",
             "fields": [
@@ -520,6 +542,228 @@
             ]
         },
         {
+            "name": "logbackasset",
+            "base": "",
+            "fields": [
+                {
+                    "name": "asset_owner",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "backed_token",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "logburnasset",
+            "base": "",
+            "fields": [
+                {
+                    "name": "asset_owner",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "collection_name",
+                    "type": "name"
+                },
+                {
+                    "name": "schema_name",
+                    "type": "name"
+                },
+                {
+                    "name": "template_id",
+                    "type": "int32"
+                },
+                {
+                    "name": "backed_tokens",
+                    "type": "asset[]"
+                },
+                {
+                    "name": "old_immutable_data",
+                    "type": "ATTRIBUTE_MAP"
+                },
+                {
+                    "name": "old_mutable_data",
+                    "type": "ATTRIBUTE_MAP"
+                },
+                {
+                    "name": "asset_ram_payer",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "logmint",
+            "base": "",
+            "fields": [
+                {
+                    "name": "asset_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "authorized_minter",
+                    "type": "name"
+                },
+                {
+                    "name": "collection_name",
+                    "type": "name"
+                },
+                {
+                    "name": "schema_name",
+                    "type": "name"
+                },
+                {
+                    "name": "template_id",
+                    "type": "int32"
+                },
+                {
+                    "name": "new_asset_owner",
+                    "type": "name"
+                },
+                {
+                    "name": "immutable_data",
+                    "type": "ATTRIBUTE_MAP"
+                },
+                {
+                    "name": "mutable_data",
+                    "type": "ATTRIBUTE_MAP"
+                },
+                {
+                    "name": "backed_tokens",
+                    "type": "asset[]"
+                },
+                {
+                    "name": "immutable_template_data",
+                    "type": "ATTRIBUTE_MAP"
+                }
+            ]
+        },
+        {
+            "name": "lognewoffer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "offer_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "sender",
+                    "type": "name"
+                },
+                {
+                    "name": "recipient",
+                    "type": "name"
+                },
+                {
+                    "name": "sender_asset_ids",
+                    "type": "uint64[]"
+                },
+                {
+                    "name": "recipient_asset_ids",
+                    "type": "uint64[]"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "lognewtempl",
+            "base": "",
+            "fields": [
+                {
+                    "name": "template_id",
+                    "type": "int32"
+                },
+                {
+                    "name": "authorized_creator",
+                    "type": "name"
+                },
+                {
+                    "name": "collection_name",
+                    "type": "name"
+                },
+                {
+                    "name": "schema_name",
+                    "type": "name"
+                },
+                {
+                    "name": "transferable",
+                    "type": "bool"
+                },
+                {
+                    "name": "burnable",
+                    "type": "bool"
+                },
+                {
+                    "name": "max_supply",
+                    "type": "uint32"
+                },
+                {
+                    "name": "immutable_data",
+                    "type": "ATTRIBUTE_MAP"
+                }
+            ]
+        },
+        {
+            "name": "logsetdata",
+            "base": "",
+            "fields": [
+                {
+                    "name": "asset_owner",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "old_data",
+                    "type": "ATTRIBUTE_MAP"
+                },
+                {
+                    "name": "new_data",
+                    "type": "ATTRIBUTE_MAP"
+                }
+            ]
+        },
+        {
+            "name": "logtransfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "collection_name",
+                    "type": "name"
+                },
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_ids",
+                    "type": "uint64[]"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
             "name": "mintasset",
             "base": "",
             "fields": [
@@ -592,6 +836,24 @@
             ]
         },
         {
+            "name": "offery",
+            "base": "",
+            "fields": [
+                {
+                    "name": "offer_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "sender",
+                    "type": "name"
+                },
+                {
+                    "name": "receiver",
+                    "type": "name"
+                }
+            ]
+        },
+        {
             "name": "pair_string_ATOMIC_ATTRIBUTE",
             "base": "",
             "fields": [
@@ -602,6 +864,20 @@
                 {
                     "name": "value",
                     "type": "ATOMIC_ATTRIBUTE"
+                }
+            ]
+        },
+        {
+            "name": "payofferram",
+            "base": "",
+            "fields": [
+                {
+                    "name": "payer",
+                    "type": "name"
+                },
+                {
+                    "name": "offer_id",
+                    "type": "uint64"
                 }
             ]
         },
@@ -644,6 +920,28 @@
                 {
                     "name": "format",
                     "type": "FORMAT[]"
+                }
+            ]
+        },
+        {
+            "name": "setassetdata",
+            "base": "",
+            "fields": [
+                {
+                    "name": "authorized_editor",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_owner",
+                    "type": "name"
+                },
+                {
+                    "name": "asset_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "new_mutable_data",
+                    "type": "ATTRIBUTE_MAP"
                 }
             ]
         },
@@ -802,6 +1100,11 @@
             "ricardian_contract": ""
         },
         {
+            "name": "backasset",
+            "type": "backasset",
+            "ricardian_contract": ""
+        },
+        {
             "name": "bulkminting",
             "type": "bulkminting",
             "ricardian_contract": ""
@@ -862,8 +1165,53 @@
             "ricardian_contract": ""
         },
         {
+            "name": "logbackasset",
+            "type": "logbackasset",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "logburnasset",
+            "type": "logburnasset",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "logmint",
+            "type": "logmint",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "lognewoffer",
+            "type": "lognewoffer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "lognewtempl",
+            "type": "lognewtempl",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "logsetdata",
+            "type": "logsetdata",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "logtransfer",
+            "type": "logtransfer",
+            "ricardian_contract": ""
+        },
+        {
             "name": "mintasset",
             "type": "mintasset",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "offery",
+            "type": "offery",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "payofferram",
+            "type": "payofferram",
             "ricardian_contract": ""
         },
         {
@@ -874,6 +1222,11 @@
         {
             "name": "remnotifyacc",
             "type": "remnotifyacc",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "setassetdata",
+            "type": "setassetdata",
             "ricardian_contract": ""
         },
         {
